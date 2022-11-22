@@ -44,7 +44,24 @@ function App() {
         </ul>
       </header>
       <div className="content">
-
+        <div className="categories">
+          <div className="card">
+            <img width={250} height={206} src="img/1.png" alt=""></img>
+            <p>Электроника</p>
+          </div>
+          <div className="card">
+            <img width={250} height={206} src="img/2.png" alt=""></img>
+            <p>Бытовая техника</p>
+          </div>
+          <div className="card">
+            <img width={250} height={206} src="img/3.png" alt=""></img>
+            <p>Книги, хобби, канцелярия</p>
+          </div>
+          <div className="card">
+            <img width={250} height={206} src="img/4.png" alt=""></img>
+            <p>Продукты питания</p>
+          </div>
+        </div>
       </div>
     </div>
   );
