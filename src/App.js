@@ -25,43 +25,118 @@ function App() {
           </button>
         </div>
         <ul className="headerRight">
-          <li>
+          <li href="">
             <img alt="" src="img/user.svg"></img>
-            <span>Войти</span>
+            <p>Войти</p>
           </li>
-          <li>
+          <li href="">
             <img alt="" src="img/orders.svg"></img>
-            <span>Заказы</span>
+            <span>5</span>
+            <p>Заказы</p>
           </li>
-          <li>
+          <li href="">
             <img alt="" src="img/like.svg"></img>
-            <span>Избранное</span>
+            <span>5</span>
+            <p>Избранные</p>
           </li>
-          <li>
+          <li href="">
             <img alt="" src="img/card.svg"></img>
-            <span>Корзина</span>
+            <span>5</span>
+            <p>Корзина</p>
           </li>
         </ul>
       </header>
       <div className="content">
         <div className="categories">
-          <div className="card">
-            <img width={250} height={206} src="img/1.png" alt=""></img>
+          <div className="large-card">
+            <img src="img/1.png" alt=""></img>
             <p>Электроника</p>
           </div>
-          <div className="card">
+          <div className="large-card">
             <img width={250} height={206} src="img/2.png" alt=""></img>
             <p>Бытовая техника</p>
           </div>
-          <div className="card">
+          <div className="large-card">
             <img width={250} height={206} src="img/3.png" alt=""></img>
             <p>Книги, хобби, канцелярия</p>
           </div>
-          <div className="card">
+          <div className="large-card">
             <img width={250} height={206} src="img/4.png" alt=""></img>
             <p>Продукты питания</p>
           </div>
+          {/* <div className="small-card">
+            <img width={119} height={106} src="img/5.png" alt=""></img>
+            <p>Детские товары</p>
+          </div>
+          <div className="small-card">
+            <img width={119} height={106} src="img/6.png" alt=""></img>
+            <p>Одежда, обувь и аксессуары</p>
+          </div>
+          <div className="small-card">
+            <img width={119} height={106} src="img/7.png" alt=""></img>
+            <p>Зоотовары</p>
+          </div>
+          <div className="small-card">
+            <img width={119} height={106} src="img/8.png" alt=""></img>
+            <p>Красота и уход</p>
+          </div> */}
         </div>
+        <div className="popular">
+          <h2>Популярная компьютерная техника</h2>
+          <div className="popular-items">
+            <div className="product-card">
+              <div className="product-card-markers">
+                <img alt="" width={18} height={15} src="img/favourite.svg"></img>
+              </div>
+                <img alt="" src="img/9.png"></img>
+                <h5>от 3000 ₽</h5>
+                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <span>26 предложений</span>
+                <button>Купить</button>
+            </div>
+            <div className="product-card">
+              <div className="product-card-markers">
+                <img alt="" width={18} height={15} src="img/favourite.svg"></img>
+                <span>Новинка</span>
+              </div>
+                <img alt="" src="img/9.png"></img>
+                <h5>от 3000 ₽</h5>
+                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <span>26 предложений</span>
+                <button>Купить</button>
+            </div>
+            <div className="product-card">
+              <div className="product-card-markers">
+                <img alt="" width={18} height={15} src="img/favourite.svg"></img>
+              </div>
+                <img alt=""  src="img/9.png"></img>
+                <h5>от 3000 ₽</h5>
+                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <span>26 предложений</span>
+                <button>Купить</button>
+            </div>
+            <div className="product-card">
+              <div className="product-card-markers">
+                <img alt="" width={18} height={15} src="img/favourite.svg"></img>
+              </div>
+                <img alt="" src="img/9.png"></img>
+                <h5>от 3000 ₽</h5>
+                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <span>26 предложений</span>
+                <button>Купить</button>
+            </div>
+            <div className="product-card">
+              <div className="product-card-markers">
+                <img alt="" width={18} height={15} src="img/favourite.svg"></img>
+              </div>
+                <img alt=""  src="img/9.png"></img>
+                <h5>от 3000 ₽</h5>
+                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <span>26 предложений</span>
+                <button>Купить</button>
+            </div>
+          </div>
+        </div> 
       </div>
     </div>
   );
