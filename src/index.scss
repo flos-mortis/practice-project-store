@@ -170,6 +170,9 @@ header {
 
       .product-card {
 
+        display: flex;
+        flex-direction: column;
+
         .product-card-markers {
 
           img {
@@ -187,18 +190,26 @@ header {
           }
 
         }
-  
-        span {
-          color: #B9B9B9;
-          margin-top: 20px;
+
+        .product-card-name {
+          flex-grow: 1;
         }
-  
-        button {
-          width: 145px;
-          height: 40px;
-          border-radius: 10px;
-          margin-top: 10px;
-          font-size: 18px;
+
+        .product-card-bottom {
+
+          span {
+            color: #B9B9B9;
+            margin-top: 20px;
+          }
+    
+          button {
+            width: 145px;
+            height: 40px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 18px;
+          }
+
         }
       }
     }

@@ -90,7 +90,9 @@ function App() {
               </div>
                 <img alt="" src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <div className="product-card-name">
+                  <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                </div>
                 <div className="product-card-bottom">
                   <span>26 предложений</span>
                   <button>Купить</button>
@@ -103,9 +105,13 @@ function App() {
               </div>
                 <img alt="" src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
-                <span>26 предложений</span>
-                <button>Купить</button>
+                <div className="product-card-name">
+                  <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver (53013ERK)</p>
+                </div>
+                <div className="product-card-bottom">
+                  <span>26 предложений</span>
+                  <button>Купить</button>
+                </div>
             </div>
             <div className="product-card">
               <div className="product-card-markers">
@@ -113,9 +119,13 @@ function App() {
               </div>
                 <img alt=""  src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Умная колонка Яндекс </p>
-                <span>26 предложений</span>
-                <button>Купить</button>
+                <div className="product-card-name">
+                  <p>Умная колонка Яндекс Станция Мини</p>
+                </div>
+                <div className="product-card-bottom">
+                  <span>26 предложений</span>
+                  <button>Купить</button>
+                </div>
             </div>
             <div className="product-card">
               <div className="product-card-markers">
@@ -123,9 +133,13 @@ function App() {
               </div>
                 <img alt="" src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Умная колонка Яндекс </p>
-                <span>26 предложений</span>
-                <button>Купить</button>
+                <div className="product-card-name">
+                  <p>Робот-пылесос Xiaomi Mi Robot</p>
+                </div>
+                <div className="product-card-bottom">
+                  <span>26 предложений</span>
+                  <button>Купить</button>
+                </div>
             </div>
             <div className="product-card">
               <div className="product-card-markers">
@@ -133,9 +147,13 @@ function App() {
               </div>
                 <img alt=""  src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Умная колонка Яндекс </p>
-                <span>26 предложений</span>
-                <button>Купить</button>
+                <div className="product-card-name">
+                  <p>Зеркальный фотоаппарат Canon EOS 6D Body</p>
+                </div>
+                <div className="product-card-bottom">
+                  <span>26 предложений</span>
+                  <button>Купить</button>
+                </div>
             </div>
           </div>
           <button className="show-more-btn">Показать еще</button>
