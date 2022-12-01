@@ -5,7 +5,7 @@ function App() {
     <div className="wrapper">
       <header>
         <div className="headerLeft">
-          <img alt="" width={187} height={71} src="img/logo.svg"></img>
+          <img alt="" href="/#" width={187} height={71} src="img/logo.svg"></img>
           <div className="headerCity">
             <img alt="" width={8.47} height={12} src="img/marker.svg"></img>
             <p>Москва</p>
@@ -36,7 +36,7 @@ function App() {
           </li>
           <li href="">
             <img alt="" src="img/like.svg"></img>
-            <span>5</span>
+            <span>12</span>
             <p>Избранные</p>
           </li>
           <li href="">
@@ -91,8 +91,10 @@ function App() {
                 <img alt="" src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
                 <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
-                <span>26 предложений</span>
-                <button>Купить</button>
+                <div className="product-card-bottom">
+                  <span>26 предложений</span>
+                  <button>Купить</button>
+                </div>
             </div>
             <div className="product-card">
               <div className="product-card-markers">
@@ -111,7 +113,7 @@ function App() {
               </div>
                 <img alt=""  src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <p>Умная колонка Яндекс </p>
                 <span>26 предложений</span>
                 <button>Купить</button>
             </div>
@@ -121,7 +123,7 @@ function App() {
               </div>
                 <img alt="" src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <p>Умная колонка Яндекс </p>
                 <span>26 предложений</span>
                 <button>Купить</button>
             </div>
@@ -131,11 +133,12 @@ function App() {
               </div>
                 <img alt=""  src="img/9.png"></img>
                 <h5>от 3000 ₽</h5>
-                <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
+                <p>Умная колонка Яндекс </p>
                 <span>26 предложений</span>
                 <button>Купить</button>
             </div>
           </div>
+          <button className="show-more-btn">Показать еще</button>
         </div> 
       </div>
     </div>
