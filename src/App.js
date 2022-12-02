@@ -160,7 +160,7 @@ function App() {
         </div> 
         <div className="bestseller">
           <h1>Хит продаж</h1>
-          <div className="popular-items">
+          <div className="bestseller-items">
             <div className="product-card">
               <div className="product-card-markers">
                 <img alt="" width={18} height={15} src="img/favourite.svg"></img>
@@ -237,7 +237,7 @@ function App() {
         </div> 
         <div className="views-based">
           <h1>На основе просмотров</h1>
-          <div className="popular-items">
+          <div className="views-based-items">
             <div className="product-card">
               <div className="product-card-markers">
                 <img alt="" width={18} height={15} src="img/favourite.svg"></img>
@@ -314,7 +314,7 @@ function App() {
         </div> 
         <div className="sponsored">
           <h1>Спонсорские товары</h1>
-          <div className="popular-items">
+          <div className="sponsored-items">
             <div className="product-card">
               <div className="product-card-markers">
                 <img alt="" width={18} height={15} src="img/favourite.svg"></img>
@@ -389,8 +389,62 @@ function App() {
           </div>
           <button className="show-more-btn">Показать еще</button>
         </div> 
-        <div className="brands"></div>
+        <div className="brands">
+          <h1>Представительные бренды</h1>
+          <div className="brands-row">
+             <img alt="" src="img/logo01.png"></img>
+             <img alt="" src="img/logo02.png"></img>
+             <img alt="" src="img/logo03.png"></img>
+             <img alt="" src="img/logo04.png"></img>
+             <img alt="" src="img/logo05.png"></img>
+             <button>Все производители</button>
+          </div>
+        </div>
+        <div className="shops">
+          <h1>Территория магазинов</h1>
+          <div className="shops-row">
+             <img alt="" src="img/shop1.png"></img>
+             <img alt="" src="img/shop2.png"></img>
+             <img alt="" src="img/shop3.png"></img>
+             <img alt="" src="img/shop4.png"></img>
+             <img alt="" src="img/shop5.png"></img>
+             <button>Все продавцы</button>
+          </div>
+        </div>
+        <div className="browsed">
+          <div className="browsed-top">
+            <h1>Вы просматривали</h1>
+            <div className="navigate-buttons">
+              <button>
+                <img width={20} height={20} alt="" src="img/arrow-left.svg"></img>
+              </button>
+              <button>
+                <img width={20} height={20} alt="" src="img/arrow-right.svg"></img>
+              </button>
+            </div>
+          </div>
+          <div className="browsed-items">
+              <div className="product-card">
+                <img alt="" src="img/9.png"></img>
+              </div>
+              <div className="product-card">
+                <img alt="" src="img/10.png"></img>
+              </div>
+              <div className="product-card">
+                <img alt=""  src="img/11.png"></img>
+              </div>
+              <div className="product-card">
+                <img alt="" src="img/12.png"></img>
+              </div>
+              <div className="product-card">
+                <img alt=""  src="img/13.png"></img>
+              </div>
+            </div>
+        </div>
       </div>
+      <footer>
+        
+      </footer>
     </div>
   );
 }
