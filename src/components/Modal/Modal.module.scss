@@ -1,0 +1,79 @@
+
+h4 {
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cardModal {
+    border-radius: 10px;
+    width: 60%;
+    background-color: #FBFBFB;
+    margin: auto;
+    margin-top: 100px;
+    padding: 40px;
+
+    .closeModal{
+        float: right;
+        cursor: pointer;
+    }
+
+    .productCard {
+        display: flex;
+        margin-top: 40px;
+
+        .productDesc {
+            margin-left: 60px;
+            width: 100%;
+
+            span {
+                color: #2CB708;
+            }
+
+            .productBtns {
+                display: flex;
+                margin-top: 10px;
+
+                .productCounter {
+                    display: flex;
+                    flex-direction: row;
+                    border: 1px solid #2CB708;
+                    border-radius: 10px;
+                    padding: 9px;
+
+                    .up, .down {
+                        cursor: pointer ;
+                    }
+
+                    .productCounterValue {
+                        padding-left: 30px;
+                        padding-right: 30px;
+                        color: #2CB708;
+                    }
+                }
+
+                .goToCardBtn {
+                    display: flex;
+
+                    button {
+                        border-radius: 10px;
+                        margin-left: 20px;
+                        flex: 1;
+                        text-align: center;
+                    }
+                }
+
+                .goToShopBtn {
+                    display: flex;
+                    margin-left: auto;
+                    a {
+                        color: #2CB708;
+                        cursor: pointer;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}

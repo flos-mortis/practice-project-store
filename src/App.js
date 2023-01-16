@@ -1,6 +1,9 @@
 import React from "react";
-import ProductCard from "./components/ProductCard";
 import Header from "./components/Header";
+import ProductCard from "./components/ProductCard";
+import CardsData from "./StoreData";
+import Modal from "./components/Modal";
+
 
 function App() {
   return (
@@ -43,297 +46,73 @@ function App() {
             </div> */}
           </div>
           <div className="popular">
-            <h1>Популярная компьютерная техника</h1>
-            <div className="popular-items">
-              <ProductCard/>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                  <span>Новинка</span>
+              <h1>Популярная компьютерная техника</h1>
+              <div className="popular-items">
+                {
+                  CardsData.map((obj) => (
+                      <ProductCard 
+                          newItem={obj.newItem} 
+                          imageUrl={obj.imageUrl}
+                          price={obj.price}
+                          title={obj.title}
+                          suggestions={obj.suggestions} 
+                      />
+                  ))
+                }
+                <div className="overlay">    
+                  <Modal/>
                 </div>
-                  <img alt="" src="img/10.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver (53013ERK)</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
               </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/11.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Умная колонка Яндекс Станция Мини</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt="" src="img/12.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Робот-пылесос Xiaomi Mi Robot</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/13.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Зеркальный фотоаппарат Canon EOS 6D Body</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-            </div>
-            <button className="show-more-btn">Показать еще</button>
+              <button className="show-more-btn">Показать еще</button>
           </div> 
           <div className="bestseller">
             <h1>Хит продаж</h1>
             <div className="bestseller-items">
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt="" src="img/9.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                  <span>Новинка</span>
-                </div>
-                  <img alt="" src="img/10.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver (53013ERK)</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/11.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Умная колонка Яндекс Станция Мини</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt="" src="img/12.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Робот-пылесос Xiaomi Mi Robot</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/13.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Зеркальный фотоаппарат Canon EOS 6D Body</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
+              {
+                  CardsData.map((obj) => (
+                      <ProductCard 
+                          newItem={obj.newItem} 
+                          imageUrl={obj.imageUrl}
+                          price={obj.price}
+                          title={obj.title}
+                          suggestions={obj.suggestions} 
+                      />
+                  ))
+                }
             </div>
             <button className="show-more-btn">Показать еще</button>
-          </div> 
+          </div>
           <div className="views-based">
             <h1>На основе просмотров</h1>
             <div className="views-based-items">
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt="" src="img/9.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                  <span>Новинка</span>
-                </div>
-                  <img alt="" src="img/10.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver (53013ERK)</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/11.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Умная колонка Яндекс Станция Мини</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt="" src="img/12.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Робот-пылесос Xiaomi Mi Robot</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/13.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Зеркальный фотоаппарат Canon EOS 6D Body</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
+                {
+                  CardsData.map((obj) => (
+                      <ProductCard 
+                          newItem={obj.newItem} 
+                          imageUrl={obj.imageUrl}
+                          price={obj.price}
+                          title={obj.title}
+                          suggestions={obj.suggestions} 
+                      />
+                  ))
+                }
             </div>
             <button className="show-more-btn">Показать еще</button>
           </div> 
           <div className="sponsored">
             <h1>Спонсорские товары</h1>
             <div className="sponsored-items">
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt="" src="img/9.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                  <span>Новинка</span>
-                </div>
-                  <img alt="" src="img/10.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Ультрабук Huawei MateBook D 14 NbD-WDI9 Mystic Silver (53013ERK)</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/11.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Умная колонка Яндекс Станция Мини</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt="" src="img/12.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Робот-пылесос Xiaomi Mi Robot</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
-              <div className="product-card">
-                <div className="product-card-markers">
-                  <img alt="" width={18} height={15} src="img/favourite.svg"></img>
-                </div>
-                  <img alt=""  src="img/13.png"></img>
-                  <h3>от 3000 ₽</h3>
-                  <div className="product-card-name">
-                    <p>Зеркальный фотоаппарат Canon EOS 6D Body</p>
-                  </div>
-                  <div className="product-card-bottom">
-                    <span>26 предложений</span>
-                    <button>Купить</button>
-                  </div>
-              </div>
+                {   
+                  CardsData.map((obj) => (
+                      <ProductCard 
+                          newItem={obj.newItem} 
+                          imageUrl={obj.imageUrl}
+                          price={obj.price}
+                          title={obj.title}
+                          suggestions={obj.suggestions} 
+                      />
+                  ))
+                }
             </div>
             <button className="show-more-btn">Показать еще</button>
           </div> 
