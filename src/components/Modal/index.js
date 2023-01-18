@@ -1,9 +1,9 @@
 import styles from "./Modal.module.scss"
 
-function Modal() {
+function Modal(props) {
     return (
         <div className={styles.cardModal}>
-            <img className={styles.closeModal} alt="" src="img/close.svg"></img>
+            <img className={styles.closeModal} onClick={props.onClickClose} alt="" src="img/close.svg"></img>
             <h1>Товар добавлен в корзину</h1>
             <div className={styles.productCard}>
                 <img alt="" src="img/product.png"></img>

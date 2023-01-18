@@ -23,7 +23,7 @@ function ProductCard(props) {
         </div>
         <div className={styles.product_card_bottom}>
             <span>{props.suggestions} предложений</span>
-            <button>Купить</button>
+            <button onClick={props.onClickBuy}>Купить</button>
         </div>
     </div>
     )
