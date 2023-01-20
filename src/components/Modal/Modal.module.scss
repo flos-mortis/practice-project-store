@@ -11,8 +11,11 @@ h4 {
     width: 60%;
     background-color: #FBFBFB;
     margin: auto;
-    margin-top: 100px;
     padding: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     .closeModal{
         float: right;
@@ -59,8 +62,6 @@ h4 {
                     button {
                         border-radius: 10px;
                         margin-left: 20px;
-                        flex: 1;
-                        text-align: center;
                     }
                 }
 
@@ -71,6 +72,7 @@ h4 {
                         color: #2CB708;
                         cursor: pointer;
                         margin-left: auto;
+                        line-height: 40px;
                     }
                 }
             }

@@ -2,18 +2,19 @@ import React from "react";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 import CardsData from "./StoreData";
-import Modal from "./components/Modal";
+import LoginForm from "./components/LoginForm";
 
 
 function App() {
-  const [modalOpened, setModalOpened] = React.useState(false)
-
   return (
     <div>
       <div className="wrapper">
         <Header/>
         <div className="content">
           <div className="categories">
+            <div className="overlay">
+              <LoginForm/>
+            </div>
             <div className="large-card">
               <img src="img/1.png" alt=""></img>
               <p>Электроника</p>
@@ -58,17 +59,8 @@ function App() {
                           price={obj.price}
                           title={obj.title}
                           suggestions={obj.suggestions} 
-                          onClickBuy={() => setModalOpened(true)}
                       />
                   ))
-                }
-                { modalOpened ? 
-                    <div className="overlay">    
-                      <Modal 
-                        onClickClose={() => setModalOpened(false)}
-                      />
-                    </div> 
-                  : null
                 }
               </div>
               <button className="show-more-btn">Показать еще</button>
@@ -84,7 +76,6 @@ function App() {
                           price={obj.price}
                           title={obj.title}
                           suggestions={obj.suggestions} 
-                          onClickBuy={() => setModalOpened(true)}
                       />
                   ))
                 }
@@ -102,7 +93,6 @@ function App() {
                           price={obj.price}
                           title={obj.title}
                           suggestions={obj.suggestions} 
-                          onClickBuy={() => setModalOpened(true)}
                       />
                   ))
                 }
@@ -120,7 +110,6 @@ function App() {
                           price={obj.price}
                           title={obj.title}
                           suggestions={obj.suggestions} 
-                          onClickBuy={() => setModalOpened(true)}
                       />
                   ))
                 }
