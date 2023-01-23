@@ -1,4 +1,10 @@
-import React from "react"
+import React from "react" 
+import {
+    Routes,
+    Route,
+    Link} from "react-router-dom" 
+    
+import LoginForm from "./LoginForm"
 
 function Header() {
     return (
@@ -25,8 +31,10 @@ function Header() {
             </div>
             <ul className="headerRight">
                 <li href="">
-                    <img alt="" src="img/user.svg"></img>
-                    <p>Войти</p>
+                    <Link to="/login">
+                        <img alt="" src="img/user.svg"></img>
+                        <p>Войти</p>
+                    </Link>
                 </li>
                 <li href="">
                     <img alt="" src="img/orders.svg"></img>
@@ -44,7 +52,14 @@ function Header() {
                     <p>Корзина</p>
                 </li>
             </ul>
-    </header>
+            <Routes>
+                <Route path="/login" element={
+                    <div className="overlay">
+                        <LoginForm/>
+                    </div>}>
+                </Route>
+            </Routes>
+        </header>
     )
 }
 

@@ -2,7 +2,11 @@ import React from "react";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 import CardsData from "./StoreData";
-import LoginForm from "./components/LoginForm";
+import {BrowserRouter as Router,
+    Routes,
+    Route,
+    Link} from "react-router-dom" 
+    
 
 
 function App() {
@@ -12,9 +16,6 @@ function App() {
         <Header/>
         <div className="content">
           <div className="categories">
-            <div className="overlay">
-              <LoginForm/>
-            </div>
             <div className="large-card">
               <img src="img/1.png" alt=""></img>
               <p>Электроника</p>
