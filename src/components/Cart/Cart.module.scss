@@ -1,0 +1,88 @@
+.cart {
+    margin-top: 80px;
+
+    .cartContent {
+        display: flex;
+        justify-content: space-between;
+
+        .leftSide {
+            margin-top: 40px;
+            width: 75%;
+        
+            .loginOrSignIn {
+                background: linear-gradient(93.2deg, #9458F5 0.44%, #B68AFD 100%);
+                border-radius: 10px;
+                padding: 20px;
+            
+                h2 {
+                    color: #ffffff;
+                }
+            
+                button {
+                    border: none;
+                    color: #9458F5;
+                    padding: 10px 40px;
+                    margin-top: 20px;
+                }
+            }
+
+            .order {
+                margin-top: 40px;
+                border: 1px solid #EAEAEA;
+                border-radius: 10px;
+                padding: 20px;
+
+                .orderProductCard {
+                    display: flex;
+                    margin-top: 20px;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .counter {
+                        display: flex;
+
+                        button {
+                            border: 1px solid #EAEAEA;
+                            border-radius: 3px;
+                            background: #FBFBFB;
+                            height: 26px;
+                            width: 26px;
+                        }
+
+                        p {
+                            padding-left: 10px;
+                            padding-right: 10px;
+                        }
+                    }
+
+                    .deleteItem {
+                        background: transparent;
+                    }
+                }
+            }
+        }
+
+        .rightSideTotal {
+            background: #FBFBFB;
+            border: 1px solid #EAEAEA;
+            border-radius: 10px;
+            margin-top: 40px;
+            padding: 40px 32px;
+            height: 100%;
+            width: 15%;
+
+            .cartItemsCount, .cartTotalPrice {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+
+                h4 {
+                    margin: 0;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+

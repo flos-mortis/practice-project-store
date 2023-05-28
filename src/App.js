@@ -1,267 +1,128 @@
 import React from "react";
 import Header from "./components/Header";
-import ProductCard from "./components/ProductCard";
-import CardsData from "./StoreData";
-import {BrowserRouter as Router,
-    Routes,
-    Route,
-    Link} from "react-router-dom" 
-    
-
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import LoginForm from "./components/LoginForm";
+import {
+  Routes,
+  Route
+} from "react-router-dom"
 
 function App() {
+  const[cartItems, setCartItems] = React.useState([]);
+  const[searchValue, setSearchValue] = React.useState('');
+
+  const onAddToCart = (obj) => {
+    if (!cartItems.find(e => e.title === obj.title)) {
+      setCartItems(prev => [...prev, obj])
+    }
+  }
+
   return (
-    <div>
-      <div className="wrapper">
-        <Header/>
-        <div className="content">
-          <div className="categories">
-            <div className="large-card">
-              <img src="img/1.png" alt=""></img>
-              <p>Электроника</p>
-            </div>
-            <div className="large-card">
-              <img width={250} height={206} src="img/2.png" alt=""></img>
-              <p>Бытовая техника</p>
-            </div>
-            <div className="large-card">
-              <img width={250} height={206} src="img/3.png" alt=""></img>
-              <p>Книги, хобби, канцелярия</p>
-            </div>
-            <div className="large-card">
-              <img width={250} height={206} src="img/4.png" alt=""></img>
-              <p>Продукты питания</p>
-            </div>
-            {/* <div className="small-card">
-              <img width={119} height={106} src="img/5.png" alt=""></img>
-              <p>Детские товары</p>
-            </div>
-            <div className="small-card">
-              <img width={119} height={106} src="img/6.png" alt=""></img>
-              <p>Одежда, обувь и аксессуары</p>
-            </div>
-            <div className="small-card">
-              <img width={119} height={106} src="img/7.png" alt=""></img>
-              <p>Зоотовары</p>
-            </div>
-            <div className="small-card">
-              <img width={119} height={106} src="img/8.png" alt=""></img>
-              <p>Красота и уход</p>
-            </div> */}
-          </div>
-          <div className="popular">
-              <h1>Популярная компьютерная техника</h1>
-              <div className="popular-items">
-                {
-                  CardsData.map((obj) => (
-                      <ProductCard 
-                          newItem={obj.newItem} 
-                          imageUrl={obj.imageUrl}
-                          price={obj.price}
-                          title={obj.title}
-                          suggestions={obj.suggestions} 
-                      />
-                  ))
-                }
-              </div>
-              <button className="show-more-btn">Показать еще</button>
-          </div> 
-          <div className="bestseller">
-            <h1>Хит продаж</h1>
-            <div className="bestseller-items">
-              {
-                  CardsData.map((obj) => (
-                      <ProductCard 
-                          newItem={obj.newItem} 
-                          imageUrl={obj.imageUrl}
-                          price={obj.price}
-                          title={obj.title}
-                          suggestions={obj.suggestions} 
-                      />
-                  ))
-                }
-            </div>
-            <button className="show-more-btn">Показать еще</button>
-          </div>
-          <div className="views-based">
-            <h1>На основе просмотров</h1>
-            <div className="views-based-items">
-                {
-                  CardsData.map((obj) => (
-                      <ProductCard 
-                          newItem={obj.newItem} 
-                          imageUrl={obj.imageUrl}
-                          price={obj.price}
-                          title={obj.title}
-                          suggestions={obj.suggestions} 
-                      />
-                  ))
-                }
-            </div>
-            <button className="show-more-btn">Показать еще</button>
-          </div> 
-          <div className="sponsored">
-            <h1>Спонсорские товары</h1>
-            <div className="sponsored-items">
-                {   
-                  CardsData.map((obj) => (
-                      <ProductCard 
-                          newItem={obj.newItem} 
-                          imageUrl={obj.imageUrl}
-                          price={obj.price}
-                          title={obj.title}
-                          suggestions={obj.suggestions} 
-                      />
-                  ))
-                }
-            </div>
-            <button className="show-more-btn">Показать еще</button>
-          </div> 
-          <div className="brands">
-            <h1>Представительные бренды</h1>
-            <div className="brands-row">
-              <img alt="" src="img/logo01.png"></img>
-              <img alt="" src="img/logo02.png"></img>
-              <img alt="" src="img/logo03.png"></img>
-              <img alt="" src="img/logo04.png"></img>
-              <img alt="" src="img/logo05.png"></img>
-              <button>Все производители</button>
-            </div>
-          </div>
-          <div className="shops">
-            <h1>Территория магазинов</h1>
-            <div className="shops-row">
-              <img alt="" src="img/shop1.png"></img>
-              <img alt="" src="img/shop2.png"></img>
-              <img alt="" src="img/shop3.png"></img>
-              <img alt="" src="img/shop4.png"></img>
-              <img alt="" src="img/shop5.png"></img>
-              <button>Все продавцы</button>
-            </div>
-          </div>
-          <div className="browsed">
-            <div className="browsed-top">
-              <h1>Вы просматривали</h1>
-              <div className="navigate-buttons">
-                <button>
-                  <img width={20} height={20} alt="" src="img/arrow-left.svg"></img>
-                </button>
-                <button>
-                  <img width={20} height={20} alt="" src="img/arrow-right.svg"></img>
-                </button>
-              </div>
-            </div>
-            <div className="browsed-items">
-                <div className="product-card">
-                  <img alt="" src="img/9.png"></img>
-                </div>
-                <div className="product-card">
-                  <img alt="" src="img/10.png"></img>
-                </div>
-                <div className="product-card">
-                  <img alt=""  src="img/11.png"></img>
-                </div>
-                <div className="product-card">
-                  <img alt="" src="img/12.png"></img>
-                </div>
-                <div className="product-card">
-                  <img alt=""  src="img/13.png"></img>
-                </div>
-              </div>
-          </div>
+      <main>
+        <div className="wrapper">
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Home onAddToCart={onAddToCart}/>}/>
+            <Route path="/cart" element={<Cart items={cartItems}/>}/>
+            <Route path="/login" element={
+                <div className="overlay">
+                    <LoginForm/>
+                </div>}>
+            </Route>
+          </Routes>
         </div>
-      </div>
-      <footer>
-          <div className="footer-left">
-            <div className="about">
-              <h4>О компании</h4>
-              <ul>
-                <li>
-                  <a href="">Контакты</a>
-                </li>
-                <li>
-                  <a href="">Вакансии</a>
-                </li>
-                <li>
-                  <a href="">Реквизиты</a>
-                </li>
-                <li>
-                  <a href="">Партнерская <br/> программа</a>
-                </li>
-              </ul>
+        <footer>
+            <div className="footer-left">
+              <div className="about">
+                <h4>О компании</h4>
+                <ul>
+                  <li>
+                    <a href="">Контакты</a>
+                  </li>
+                  <li>
+                    <a href="">Вакансии</a>
+                  </li>
+                  <li>
+                    <a href="">Реквизиты</a>
+                  </li>
+                  <li>
+                    <a href="">Партнерская <br/> программа</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="for-buyer">
+                <h4>Покупателю</h4>
+                <ul>
+                  <li>
+                    <a href="">Помощь покупателю</a>
+                  </li>
+                  <li>
+                    <a href="">Доставка</a>
+                  </li>
+                  <li>
+                    <a href="">Оплата</a>
+                  </li>
+                  <li>
+                    <a href="">Возврат</a>
+                  </li>
+                  <li>
+                    <a href="">Кредит </a>
+                  </li>
+                  <li>
+                    <a href="">Акции</a>
+                  </li>
+                  <li>
+                    <a href="">Промокоды</a>
+                  </li>
+                  <li>
+                    <a href="">СберСпасибо</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="for-shops">
+                <h4>Магазинам</h4>
+                <ul>
+                  <li>
+                    <a href="">Помощь магазинам</a>
+                  </li>
+                  <li>
+                    <a href="">Приглашение к <br/> сотрудничеству</a>
+                  </li>
+                  <li>
+                    <a href="">Вход в личный кабинет</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="law-information">
+                <h4>Правовая информация</h4>
+                <ul>
+                  <li>
+                    <a href="">Условия использования сайта</a>
+                  </li>
+                  <li>
+                    <a href="">Политика обработки персональных данных</a>
+                  </li>
+                  <li>
+                    <a href="">Условия заказа и доставки</a>
+                  </li>
+                  <li>
+                    <a href="">Правила сервиса «закажи и забери»</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="for-buyer">
-              <h4>Покупателю</h4>
-              <ul>
-                <li>
-                  <a href="">Помощь покупателю</a>
-                </li>
-                <li>
-                  <a href="">Доставка</a>
-                </li>
-                <li>
-                  <a href="">Оплата</a>
-                </li>
-                <li>
-                  <a href="">Возврат</a>
-                </li>
-                <li>
-                  <a href="">Кредит </a>
-                </li>
-                <li>
-                  <a href="">Акции</a>
-                </li>
-                <li>
-                  <a href="">Промокоды</a>
-                </li>
-                <li>
-                  <a href="">СберСпасибо</a>
-                </li>
-              </ul>
+            <div className="footer-right">
+              <img alt="" width={187} height={70} src="img/logo.svg"></img>
+              <p>© 2022 «Texnostore»</p>
+              <div className="social-network-group">
+                <img alt="" src="img/instagram.svg"></img>
+                <img alt="" src="img/viber.svg"></img>
+                <img alt="" src="img/telegram.svg"></img>
+              </div>
             </div>
-            <div className="for-shops">
-              <h4>Магазинам</h4>
-              <ul>
-                <li>
-                  <a href="">Помощь магазинам</a>
-                </li>
-                <li>
-                  <a href="">Приглашение к <br/> сотрудничеству</a>
-                </li>
-                <li>
-                  <a href="">Вход в личный кабинет</a>
-                </li>
-              </ul>
-            </div>
-            <div className="law-information">
-              <h4>Правовая информация</h4>
-              <ul>
-                <li>
-                  <a href="">Условия использования сайта</a>
-                </li>
-                <li>
-                  <a href="">Политика обработки персональных данных</a>
-                </li>
-                <li>
-                  <a href="">Условия заказа и доставки</a>
-                </li>
-                <li>
-                  <a href="">Правила сервиса «закажи и забери»</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="footer-right">
-            <img alt="" width={187} height={70} src="img/logo.svg"></img>
-            <p>© 2022 «Texnostore»</p>
-            <div className="social-network-group">
-              <img alt="" src="img/instagram.svg"></img>
-              <img alt="" src="img/viber.svg"></img>
-              <img alt="" src="img/telegram.svg"></img>
-            </div>
-          </div>
         </footer>
-    </div>
+      </main>
   );
 }
 

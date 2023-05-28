@@ -32,10 +32,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 button {
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+.greenBtn {
   background: #2CB708;
   color: #FFFFFF;
-  cursor: pointer;
-  border: none;
+}
+
+
+.greenBtn:hover {
+  background-color: #28970C;
+}
+
+.greenBtn:focus {
+  background-color: #53DC2F;
+}
+
+.orangeBtn {
+  background: #EB8528;
+  color: #FFFFFF;
+}
+
+.orangeBtn:hover {
+  background-color: #C97120;
+}
+
+.orangeBtn:focus {
+  background-color: #F39D4C;
+}
+
+.whiteBtn {
+  border: 1.5px solid #2CB708;
+  background: #FBFBFB;
+  color: #333232;
 }
 
 .overlay {
@@ -60,6 +93,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
 
   .headerCity {
     display: flex;
@@ -127,6 +161,11 @@ header {
       border: 1px solid #2CB708;
       width: 45px;
       height: 40px;
+
+      img {
+        display: flex;
+        margin: auto;
+      }
     }
   }
 

@@ -20,7 +20,7 @@ function Modal(props) {
                             <img className={styles.up} src="img/up.svg"></img>
                         </div>
                         <div className={styles.goToCardBtn}>
-                            <button>Перейти в корзину</button>
+                            <button className="greenBtn">Перейти в корзину</button>
                         </div>
                         <div className={styles.goToShopBtn}>
                             <a onClick={props.onClickClose}>Продолжить покупки</a>

@@ -2,18 +2,17 @@ import React, { Fragment } from "react";
 import styles from "./ProductCard.module.scss"
 import Modal from "../Modal";
 
-
-function ProductCard(props) {
-
+function ProductCard({newItem, imageUrl, price, title, suggestions, onBuy}) {
     const [isAdded, setIsAdded] = React.useState();
-    const [modalOpened, setModalOpened] = React.useState(false)
+    const [modalOpened, setModalOpened] = React.useState(false);
 
     const handleAddClick = () => {
         setIsAdded(!isAdded)
     }
 
-    const handleOpenClick = () => {
-        setModalOpened(true)
+    const onClickBuy = () => {
+        setModalOpened(true);
+        onBuy({title, price, imageUrl});    
     }
 
     return (
@@ -21,29 +20,28 @@ function ProductCard(props) {
             <div className={styles.product_card}>
                 <div className={styles.product_card_markers}>
                     <img alt="" onClick={handleAddClick} width={18} height={15} src={isAdded ? "img/faved.svg" : "img/unfaved.svg"}></img>
-                    {props.newItem}
+                    {newItem}
                 </div>
-                <img alt="" src={props.imageUrl}></img>
-                <h3>от {props.price} ₽</h3>
+                <img alt="" src={imageUrl}></img>
+                <h3>от {price} ₽</h3>
                 <div className={styles.product_card_name}>
-                    <p>{props.title}</p>
+                    <p>{title}</p>
                 </div>
                 <div className={styles.product_card_bottom}>
-                    <span>{props.suggestions} предложений</span>
-                    <button onClick={handleOpenClick}>Купить</button>
+                    <span>{suggestions} предложений</span>
+                    <button onClick={onClickBuy}  className="greenBtn">Купить</button>
                 </div>
             </div>
             
-            { modalOpened ? 
+            { modalOpened && 
                 <div className="overlay">    
                     <Modal 
                         onClickClose={() => setModalOpened(false)}
-                        imageUrl={props.imageUrl}
-                        title={props.title}
-                        price={props.price}
+                        imageUrl={imageUrl}
+                        title={title}
+                        price={price}
                     />
-                </div> 
-            : null
+                </div>
             }
         </Fragment>
     )
